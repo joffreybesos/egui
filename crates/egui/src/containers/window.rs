@@ -300,7 +300,7 @@ impl<'open> Window<'open> {
         let area_layer_id = area.layer();
         let resize_id = area_id.with("resize");
         let mut collapsing =
-            CollapsingState::load_with_default_open(ctx, area_id.with("collapsing"), default_open);
+            CollapsingState::load_with_default_open(ctx, area_id.with("collapsing"), false);
 
         let is_collapsed = with_title_bar && !collapsing.is_open();
         let possible = PossibleInteractions::new(&area, &resize, is_collapsed);
